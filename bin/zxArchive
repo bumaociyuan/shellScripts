@@ -24,7 +24,7 @@ oem1)
 ;;
 
 *)
-echo 'Usage: dev|cn|com|apple|oem1|all'
+echo 'Usage: dev|cn|com|apple|oem1'
 exit
 ;;
 esac
