@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#case $1 in
+#*)
+#echo 'Not accept parameters'
+
+#;;
+#esac
+
+#exit 0
+
+cp /Users/niko/work/workspace/handday/crmZztx/crmZztx/pages/resources/js/constdefined.js /Users/niko/Desktop/constdefined.js
+
+rm -r /Users/niko/work/workspace/handday/crmZztx/crmZztx/pages
+
+cp -r /Users/niko/Library/Tomcat/webapps/WebProject/前端项目/MobileUI/IOS /Users/niko/work/workspace/handday/crmZztx/crmZztx/pages
+
+mv /Users/niko/Desktop/constdefined.js /Users/niko/work/workspace/handday/crmZztx/crmZztx/pages/resources/js/constdefined.js
+
+echo '......'
+echo 'merge is done'

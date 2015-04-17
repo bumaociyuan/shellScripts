@@ -1,0 +1,47 @@
+#!/bin/bash
+
+path2='/Users/niko/work/workspace/handday/crmZztx/crmZztx/pages/resources/js/constdefined.js'
+
+JS_DEFINE=LOCATION
+TMP_FILE='/tmp/out.tmp.$$'
+
+JS_DEFINE_STRING="var _type = RunTimeType.*"
+oem='IsOem: true,'
+isoem='false'
+case $1 in
+
+dev)
+JS_DEFINE=LOCATION
+;;
+
+cn)
+JS_DEFINE=ONLINE_TEST
+;;
+
+com)
+JS_DEFINE=ONLINE
+;;
+
+apple)
+JS_DEFINE=APPSTORE
+;;
+
+oem1)
+JS_DEFINE=ONLINE
+isoem='true'
+oem='IsOem: false,'
+;;
+
+*)
+echo 'Usage: dev|cn|com|apple|oem1'
+exit 0
+;;
+esac
+
+
+sed "s/$JS_DEFINE_STRING/var _type = RunTimeType.$JS_DEFINE;/g" $path2 > $TMP_FILE && mv $TMP_FILE $path2
+sed "s/$oem/IsOem: $isoem,/g" $path2 > $TMP_FILE && mv $TMP_FILE $path2
+
+exit 0
+
+

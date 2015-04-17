@@ -1,0 +1,46 @@
+#!/bin/bash
+
+cd /Users/niko/work/workspace/handday/crmZztx/
+
+ipa=$1.ipa
+dsym=$1.app.dSYM.zip
+ipaFolder='/Users/niko/work/ipa'
+
+case $1 in
+
+dev)
+;;
+
+cn)
+;;
+
+com)
+;;
+
+apple)
+;;
+
+oem1)
+;;
+
+*)
+echo 'Usage: dev|cn|com|apple|oem1|all'
+exit
+;;
+esac
+
+ipa -s -t build $1
+mv $ipa $ipaFolder
+if [ $1 = com ];then
+    mv $ipa $ipaFolder/zztx.ipa
+fi
+
+if [ $1 = cn ];then
+    mv $ipa $ipaFolder/zztxTest.ipa
+fi
+
+rm $dsym
+terminal-notifier -message 'Archive $1 is done'
+
+exit 0
+

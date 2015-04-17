@@ -1,0 +1,12 @@
+#!/bin/bash
+
+port=$1
+
+if [ $# -eq 0 ]; then
+    port=8000
+fi
+
+ip="$(ifconfig | grep "inet " | grep -v 127.0.0.1 | cut -d\  -f2)"
+
+open http://$ip:$port
+python -m SimpleHTTPServer $port
