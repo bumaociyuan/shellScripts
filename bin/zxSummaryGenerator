@@ -1,5 +1,5 @@
 cd /Users/niko/work/workspace/handday
-git log --since=1day --all --pretty=format:%s|grep -v "Merge"|grep -v "WIP"|grep -v "zx"|pbcopy
+git log --since=1day --all --pretty=format:%s|grep -v "Merge"|grep -v "WIP"|grep -v "zx"|nl|pbcopy
 #pbcopy $result
 #TMP='/tmp/out.tmp.$$'
 #echo $result >> $TMP
