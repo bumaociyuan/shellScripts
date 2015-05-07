@@ -1,46 +1,56 @@
 #!/bin/bash
+# replace is using node js 'npm install replace -g'
+path='/Users/niko/work/workspace/handday/crmZztx/crmZztx/pages/resources/js/constdefined.js'
 
-path2='/Users/niko/work/workspace/handday/crmZztx/crmZztx/pages/resources/js/constdefined.js'
 
-JS_DEFINE=LOCATION
-TMP_FILE='/tmp/out.tmp.$$'
+oemPattern="var Oem = (.*?)$"
+envPattern="var _type = RunTimeType.(.*?)$"
+isOEMPattern="IsOem: (.*?)$"
 
-JS_DEFINE_STRING="var _type = RunTimeType.*"
-oem='IsOem: true,'
-isoem='false'
+oemValue="var Oem = Oem1;"
+
 case $1 in
 
 dev)
-JS_DEFINE=LOCATION
+envValue="var _type = RunTimeType.LOCATION;"
+isOEMValue="IsOem: false,"
 ;;
 
 cn)
-JS_DEFINE=ONLINE_TEST
+envValue="var _type = RunTimeType.ONLINE_TEST;"
+isOEMValue="IsOem: false,"
 ;;
 
 com)
-JS_DEFINE=ONLINE
+envValue="var _type = RunTimeType.ONLINE;"
+isOEMValue="IsOem: false,"
 ;;
 
 apple)
-JS_DEFINE=APPSTORE
+envValue="var _type = RunTimeType.APPSTORE;"
+isOEMValue="IsOem: false,"
 ;;
 
 oem1)
-JS_DEFINE=ONLINE
-isoem='true'
-oem='IsOem: false,'
+envValue="var _type = RunTimeType.ONLINE;"
+isOEMValue="IsOem: true,"
+;;
+
+oem2)
+oemValue="var Oem = Oem2;"
+envValue="var _type = RunTimeType.ONLINE;"
+isOEMValue="IsOem: true,"
 ;;
 
 *)
-echo 'Usage: dev|cn|com|apple|oem1'
+echo 'Usage: dev|cn|com|apple|oem1|oem2'
 exit 0
 ;;
 esac
 
-
-sed "s/$JS_DEFINE_STRING/var _type = RunTimeType.$JS_DEFINE;/g" $path2 > $TMP_FILE && mv $TMP_FILE $path2
-sed "s/$oem/IsOem: $isoem,/g" $path2 > $TMP_FILE && mv $TMP_FILE $path2
+replace "${oemPattern}" "${oemValue}" $path
+replace "${envPattern}" "${envValue}" $path
+replace "${isOEMPattern}" "${isOEMValue}" $path
 
 exit 0
 
