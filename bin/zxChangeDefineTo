@@ -1,11 +1,11 @@
 #!/bin/bash
-# replace is using node js 'npm install replace -g'
+
 path='/Users/niko/work/workspace/handday/crmZztx/crmZztx/pages/resources/js/constdefined.js'
+TMP_FILE='/tmp/out.tmp.$$'
 
-
-oemPattern="var Oem = (.*?)$"
-envPattern="var _type = RunTimeType.(.*?)$"
-isOEMPattern="IsOem: (.*?)$"
+oemPattern="var Oem = Oem[1-9];"
+envPattern="var _type = RunTimeType.*"
+isOEMPattern="IsOem: [a-zA-Z;,]*"
 
 oemValue="var Oem = Oem1;"
 
@@ -46,12 +46,22 @@ isOEMValue="IsOem: true,"
 echo 'Usage: dev|cn|com|apple|oem1|oem2'
 exit 0
 ;;
+
 esac
 
-replace "${oemPattern}" "${oemValue}" $path
-replace "${envPattern}" "${envValue}" $path
-replace "${isOEMPattern}" "${isOEMValue}" $path
+innnerReplace() {
+	local pattern=$1
+	local value=$2
+	echo $pattern 
+	echo $value
+	echo -----
+	sed "s/$pattern/$value/g" $path > $TMP_FILE && mv $TMP_FILE $path
+}
 
+innnerReplace "${oemPattern}" "${oemValue}" 
+innnerReplace "${envPattern}" "${envValue}" 
+innnerReplace "${isOEMPattern}" "${isOEMValue}"
+echo done
 exit 0
 
 
