@@ -1,13 +1,8 @@
 #!/bin/bash
 
-#case $1 in
-#*)
-#echo 'Not accept parameters'
+sh /Users/niko/work/workspace/handday/script/zxMerge
 
-#;;
-#esac
-
-#exit 0
+exit 0
 
 cp /Users/niko/work/workspace/handday/crmZztx/crmZztx/pages/resources/js/constdefined.js /Users/niko/Desktop/constdefined.js
 

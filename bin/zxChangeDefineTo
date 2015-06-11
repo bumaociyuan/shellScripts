@@ -42,8 +42,14 @@ envValue="var _type = RunTimeType.ONLINE;"
 isOEMValue="IsOem: true,"
 ;;
 
+faceo2o)
+oemValue="var Oem = Oem1;"
+envValue="var _type = RunTimeType.DEV_TEST;"
+isOEMValue="IsOem: false,"
+;;
+
 *)
-echo 'Usage: dev|cn|com|apple|oem1|oem2'
+echo 'Usage: dev|cn|com|apple|oem1|oem2|faceo2o'
 exit 0
 ;;
 
