@@ -1,7 +1,0 @@
-
-echo start
-
-cd /Users/niko/Library/Tomcat/webapps/WebProject
-git tf pull
-zxMerge
-terminal-notifier -message 'merge is done'
