@@ -1,4 +1,4 @@
 #!/bin/bash
-cd /Users/niko/work/ipa 
+cd $HOME/work/ipa 
 #zxServer 1234
-node /Users/niko/work/ipa/index.js
+node $HOME/work/ipa/index.js

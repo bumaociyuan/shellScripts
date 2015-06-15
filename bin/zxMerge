@@ -1,16 +1,16 @@
 #!/bin/bash
 
-sh /Users/niko/work/workspace/handday/script/zxMerge
+sh $HOME/work/workspace/handday/script/zxMerge
 
 exit 0
 
-cp /Users/niko/work/workspace/handday/crmZztx/crmZztx/pages/resources/js/constdefined.js /Users/niko/Desktop/constdefined.js
+cp $HOME/work/workspace/handday/crmZztx/crmZztx/pages/resources/js/constdefined.js $HOME/Desktop/constdefined.js
 
-rm -r /Users/niko/work/workspace/handday/crmZztx/crmZztx/pages
+rm -r $HOME/work/workspace/handday/crmZztx/crmZztx/pages
 
-cp -r /Users/niko/Library/Tomcat/webapps/WebProject/前端项目-v7.0/MobileUI/IOS /Users/niko/work/workspace/handday/crmZztx/crmZztx/pages
+cp -r $HOME/Library/Tomcat/webapps/WebProject/前端项目-v7.0/MobileUI/IOS $HOME/work/workspace/handday/crmZztx/crmZztx/pages
 
-mv /Users/niko/Desktop/constdefined.js /Users/niko/work/workspace/handday/crmZztx/crmZztx/pages/resources/js/constdefined.js
+mv $HOME/Desktop/constdefined.js $HOME/work/workspace/handday/crmZztx/crmZztx/pages/resources/js/constdefined.js
 
 echo '......'
 echo 'merge is done'

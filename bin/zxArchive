@@ -1,10 +1,10 @@
 #!/bin/bash
 
-cd /Users/niko/work/workspace/handday/crmZztx/
+cd $HOME/work/workspace/handday/crmZztx/
 
 ipa=$1.ipa
 dsym=$1.app.dSYM.zip
-ipaFolder='/Users/niko/work/ipa'
+ipaFolder='$HOME/work/ipa'
 
 case $1 in
 

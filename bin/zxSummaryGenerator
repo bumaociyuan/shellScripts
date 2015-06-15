@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /Users/niko/work/workspace/handday
+cd $HOME/work/workspace/handday
 
 git log --since=1day --all --pretty=format:%s|grep -v "Merge"|grep -v "WIP"|grep -v "zx"|nl|pbcopy
 

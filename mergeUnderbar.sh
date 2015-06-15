@@ -1,6 +1,6 @@
 
-#cd /Users/niko/work/handday/crmZztx/crmZztx/pages
-cd /Users/niko/study/demos/shellTest/Archive
+#cd $HOME/work/handday/crmZztx/crmZztx/pages
+cd $HOME/study/demos/shellTest/Archive
 
 files=$(find . -name *_)
 

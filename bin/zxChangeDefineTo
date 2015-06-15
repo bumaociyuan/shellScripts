@@ -1,6 +1,5 @@
-#!/bin/bash
-
-path='/Users/niko/work/workspace/handday/crmZztx/crmZztx/pages/resources/js/constdefined.js'
+#!/bin/bash 
+path=$HOME/work/workspace/handday/crmZztx/crmZztx/pages/resources/js/constdefined.js
 TMP_FILE='/tmp/out.tmp.$$'
 
 oemPattern="var Oem = Oem[1-9];"

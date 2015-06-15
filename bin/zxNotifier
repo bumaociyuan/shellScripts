@@ -1,1 +1,2 @@
 terminal-notifier -message 'some thing is done'
+echo $HOME/hahh
