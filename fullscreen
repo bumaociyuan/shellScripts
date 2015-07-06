@@ -1,0 +1,22 @@
+#!/bin/bash
+# osascript <<"EOF"
+#     tell application "System Events" to keystroke "f" using { command down, control down }
+# EOF
+
+osascript <<"EOF"
+tell application "Finder"
+    set desktopFrame to bounds of window of desktop
+end tell
+
+set x to item 1 of desktopFrame
+set y to item 2 of desktopFrame
+
+set width to item 3 of desktopFrame
+set height to item 4 of desktopFrame
+
+
+tell application "Xcode"
+    activate
+    set bounds of window 1 to {x+70, y, width, height}
+end tell
+EOF

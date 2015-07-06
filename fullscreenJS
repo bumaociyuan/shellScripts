@@ -1,0 +1,5 @@
+#!/bin/bash
+
+osascript -l JavaScript <<"EOF"
+setTheClipboard('fdhajs')
+EOF

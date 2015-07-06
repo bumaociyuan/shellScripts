@@ -1,0 +1,18 @@
+#!/bin/bash
+# osascript <<"EOF"
+#     tell application "System Events" to keystroke "f" using { command down, control down }
+# EOF
+ # --> returns: {minimize effect:genie, springing delay:1.0, dock size:0.428571432829, magnification:false, springing:false, location:bottom, class:dock preferences object, magnification size:1.0, animate:true, autohide:false}
+ #set properties to {minimize effect:scale, location:right, autohide:true, magnification:false, magnification size:0.5, dock size:1.0}
+
+ osascript << EOF
+
+ tell application "System Events"
+ tell dock preferences
+ get properties
+ set properties to {minimize effect:minimize effect, magnification size:magnification size, dock size:dock size, autohide:autohide, animate:animate, magnification:magnification, screen edge:screen edge}
+
+ end tell
+ end tell
+
+ EOF
