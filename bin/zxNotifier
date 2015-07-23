@@ -1,1 +1,6 @@
-terminal-notifier -message 'some thing is done'
+text=$1
+if [ $# -eq 0 ]
+then
+text="something is done"
+fi
+terminal-notifier -message $text
